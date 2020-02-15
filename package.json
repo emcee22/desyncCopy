@@ -15,6 +15,7 @@
     "dev": "lerna run start --stream --parallel",
     "test": "lerna run test --",
     "build": "lerna run build",
+    "clean": "lerna run clean",
     "typecheck": "lerna run typecheck --stream --parallel",
     "lint": "lerna run lint --stream",
     "fix:staged": "lerna run fix:staged",

@@ -25,6 +25,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
+    "clean": "rimraf --no-glob ./dist",
     "test": "run-p test:*",
     "test:unit": "CI=true tsdx test --env=jsdom --color",
     "typecheck": "tsc -p . --noEmit",
