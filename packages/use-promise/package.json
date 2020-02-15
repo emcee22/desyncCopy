@@ -45,7 +45,7 @@
     ]
   },
   "dependencies": {
-    "@desync/use-deep-compare-memoize": "*"
+    "@desync/use-deep-compare-memoize": "^0.1.0"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
