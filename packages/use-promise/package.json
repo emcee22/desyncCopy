@@ -1,0 +1,102 @@
+{
+  "name": "@desync/use-promise",
+  "description": "Typescript friendlier hook to deal with async.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://github.com/belgattitude/desync",
+  "repository": "belgattitude/desync",
+  "author": {
+    "name": "Vanvelthem Sébastien",
+    "url": "https://github.com/belgattitude"
+  },
+  "keywords": [
+    "async",
+    "promise",
+    "react",
+    "hooks"
+  ],
+  "main": "dist/index.js",
+  "umd:main": "dist/use-promise.umd.production.js",
+  "module": "dist/use-promise.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "run-p test:*",
+    "test:unit": "CI=true tsdx test --env=jsdom --color",
+    "typecheck": "tsc -p . --noEmit",
+    "lint": "run-p lint:code",
+    "lint:code": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "fix:staged": "lint-staged --allow-empty",
+    "fix:all": "run-p fix:all:*",
+    "fix:all:code": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{yaml,json,md,html}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@desync/use-deep-compare-memoize": "*"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/fetch-mock": "^7.3.2",
+    "@types/jest": "^25.1.2",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "babel-jest": "^25.1.0",
+    "babel-plugin-import": "^1.13.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "es-check": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jest": "^23.7.0",
+    "eslint-plugin-jest-formatting": "^1.2.0",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "fetch-mock": "^8.3.2",
+    "jest": "^25.1.0",
+    "jest-cli": "^25.1.0",
+    "jest-enzyme": "^7.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.12.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.2.0",
+    "ts-node": "^8.6.2",
+    "tsdx": "^0.12.3",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5"
+  },
+  "engines": {
+    "node": ">=10.13"
+  }
+}

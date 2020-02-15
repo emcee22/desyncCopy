@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@desync/use-deep-compare-memoize": ["./packages/use-deep-compare-memoize/src"],
+      "@desync/use-promise": ["./packages/use-promise/src"]
+    }
+  }
+}

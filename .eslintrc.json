@@ -1,0 +1,126 @@
+{
+  "plugins": ["@typescript-eslint", "sonarjs", "react-hooks", "prettier", "jest", "jest-formatting"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:sonarjs/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:jest/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-angle-bracket-type-assertion": "off",
+    "no-throw-literal": "error",
+    "prefer-const": "error",
+    "no-var": "error",
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/interactive-supports-focus": "warn",
+    "jsx-a11y/no-noninteractive-element-interactions": "warn",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        // Add a list of react components names that should
+        // be considered as valid input for the rule.
+        "controlComponents": ["TextField"],
+        "assert": "either",
+        "depth": 2
+      }
+    ],
+    // relaxed for dev
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-use-before-define": "warn",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/camelcase": [
+      "error",
+      {
+        "properties": "never",
+        "ignoreDestructuring": true
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "jest/consistent-test-it": [
+      "error",
+      {
+        "fn": "it"
+      }
+    ],
+    "jest-formatting/padding-before-test-blocks": 2,
+    "jest-formatting/padding-before-describe-blocks": 2,
+    "sonarjs/cognitive-complexity": ["error", 15],
+    "sonarjs/no-useless-catch": "error",
+    "sonarjs/no-identical-expressions": "warn",
+    "sonarjs/no-small-switch": "off",
+    "sonarjs/no-unused-collection": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "sonarjs/cognitive-complexity": ["error", 20],
+        "sonarjs/no-duplicate-string": "off",
+        "sonarjs/no-identical-functions": "off"
+      }
+    },
+    {
+      "files": ["**/*.js"],
+      "parser": "espree",
+      "parserOptions": {
+        "ecmaVersion": 9
+      },
+      "rules": {
+        "sonarjs/no-duplicate-string": "off",
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    },
+    {
+      "files": ["*.d.ts"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": ["*.test.ts", "*.spec.ts", "*.ispec.ts"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "sonarjs/no-identical-expressions": "off",
+        "sonarjs/no-identical-functions": "off",
+        "sonarjs/no-duplicate-string": "off",
+        "sonarjs/cognitive-complexity": "off",
+        "sonarjs/no-useless-catch": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-object-literal-type-assertion": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    },
+    {
+      "files": ["jest.*.ts"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
+}
