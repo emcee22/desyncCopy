@@ -26,8 +26,8 @@
     "access": "public"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build --tsconfig tsconfig.build.json",
+    "start": "cross-env NODE_ENV=development tsdx watch",
+    "build": "cross-env NODE_ENV=production tsdx build --tsconfig tsconfig.build.json --format=cjs,esm,umd",
     "clean": "rimraf --no-glob ./dist ./build",
     "test": "run-p test:*",
     "test:unit": "jest --config jest.config.js --color",
