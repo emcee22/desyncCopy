@@ -1,9 +1,12 @@
 {
   "extends": "./tsconfig.build",
-  "baseUrl": ".",
-  "paths": {
-    "@desync/use-deep-compare-memoize": ["./packages/use-deep-compare-memoize/src"],
-    "@desync/use-promise/*": ["./packages/use-promise/src"]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@desync/use-deep-compare-memoize": ["./packages/use-deep-compare-memoize/src"],
+      "@desync/use-deep-compare-memoize/*": ["./packages/use-deep-compare-memoize/src/*"],
+      "@desync/use-promise": ["./packages/use-promise/src"]
+    }
   },
   "exclude": [
     "node_modules",

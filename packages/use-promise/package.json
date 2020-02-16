@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx build --tsconfig tsconfig.build.json",
     "clean": "rimraf --no-glob ./dist ./build",
     "test": "run-p test:*",
     "test:unit": "CI=true tsdx test --env=jsdom --color",
