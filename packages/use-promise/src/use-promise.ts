@@ -31,10 +31,7 @@ export function usePromise<TResult, TVariables extends object>(
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [data, setData] = useState<TResult | null>(options?.initialData ?? null);
-  const [force, forceUpdate] = useReducer((x: number, action: unknown) => {
-    console.log(action);
-    return x + 1;
-  }, 0);
+  const [force, forceUpdate] = useReducer((x: number) => x + 1, 0);
 
   const mounted = useRef<boolean>(true);
 
@@ -77,8 +74,8 @@ export function usePromise<TResult, TVariables extends object>(
   }, [force, promiseFn, immediate]);
 
   const reload = useCallback(() => {
-    forceUpdate(force);
-  }, [force]);
+    forceUpdate();
+  }, []);
 
   return { data, isLoading: loading, error, reload };
 }

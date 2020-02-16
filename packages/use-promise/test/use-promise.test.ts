@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 import { usePromise } from '../src';
 
 describe('usePromise', () => {
@@ -53,5 +53,29 @@ describe('usePromise', () => {
     expect(callback).toHaveBeenCalledTimes(1);
     expect(result.current.error).toBeInstanceOf(Error);
     expect(result.current.error?.message).toStrictEqual('cool');
+  });
+
+  it('should reload the promise when forceReload is called', async () => {
+    const callback = jest.fn();
+    const promiseFn = async () => {
+      callback();
+    };
+
+    const { result, waitForNextUpdate } = renderHook(() => usePromise(promiseFn, {}));
+    // initial data
+    expect(result.current.data).toBeNull();
+    expect(result.current.isLoading).toStrictEqual(true);
+    expect(result.current.error).toBeNull();
+
+    // resolved data
+    await waitForNextUpdate({ timeout: 500 });
+    expect(callback).toHaveBeenCalledTimes(1);
+
+    act(() => {
+      result.current.reload();
+    });
+
+    await waitForNextUpdate({ timeout: 500 });
+    expect(callback).toHaveBeenCalledTimes(2);
   });
 });
