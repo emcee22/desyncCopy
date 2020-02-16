@@ -1,0 +1,23 @@
+coverage:
+  status:
+    patch: off
+    project:
+      default: off
+      useDeepCompareMemoize:
+        flags: useDeepCompareMemoize
+        target: 50%
+      usePromise:
+        flags: usePromise
+        target: 50%
+
+flags:
+  useDeepCompareMemoize:
+    paths:
+      - packages/use-deep-compare-memoize
+  usePromise:
+    paths:
+      - packages/use-promise
+
+ignore:
+  - "scripts/**/*"
+  - "docs/**/*"
