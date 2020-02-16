@@ -1,12 +1,8 @@
 name: test
 
 on:
-  push:
-    # Definitely useful later
-    #branches:
-    #  - master
-    paths-ignore:
-      - "docs/**"
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   test:
