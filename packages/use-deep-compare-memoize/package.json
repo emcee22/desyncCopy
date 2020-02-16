@@ -33,7 +33,8 @@
     "lint:code": "eslint . --ext .ts,.tsx,.js,.jsx",
     "fix:staged": "lint-staged --allow-empty",
     "fix:all": "run-p fix:all:*",
-    "fix:all:code": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
+    "fix:all:code": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "coverage:publish": "codecov --root=../../ -F useDeepCompareMemoize"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
