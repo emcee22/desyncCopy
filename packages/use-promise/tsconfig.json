@@ -1,9 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "./build",
-    "rootDir": "./src"
-  },
+  "compilerOptions": {},
   "references": [{ "path": "../use-deep-compare-memoize" }],
   "exclude": ["node_modules", "dist"]
 }

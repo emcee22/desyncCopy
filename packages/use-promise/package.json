@@ -23,12 +23,13 @@
     "dist"
   ],
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build --tsconfig tsconfig.build.json",
+    "start": "cross-env NODE_ENV=development tsdx watch",
+    "build": "cross-env NODE_ENV=production tsdx build --tsconfig tsconfig.build.json --format=cjs,esm,umd",
     "clean": "rimraf --no-glob ./dist ./build",
     "test": "run-p test:*",
     "test:unit": "CI=true tsdx test --env=jsdom --color",
     "test:unit:coverage": "CI=true tsdx test --env=jsdom --color --coverage",
+    "prepublish": "run-s build",
     "typecheck": "tsc --project ./tsconfig.json --noEmit",
     "lint": "run-p lint:code",
     "lint:code": "eslint . --ext .ts,.tsx,.js,.jsx",
