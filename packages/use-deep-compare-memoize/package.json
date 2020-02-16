@@ -24,9 +24,10 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "run-p test:*",
     "clean": "rimraf --no-glob ./dist ./build",
+    "test": "run-p test:*",
     "test:unit": "CI=true tsdx test --env=jsdom --color",
+    "test:unit:coverage": "CI=true tsdx test --env=jsdom --color --coverage",
     "typecheck": "tsc --project tsconfig.build.json --noEmit",
     "lint": "run-p lint:code",
     "lint:code": "eslint . --ext .ts,.tsx,.js,.jsx",
