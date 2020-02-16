@@ -27,7 +27,7 @@
     "lint-staged": "^10.0.7",
     "lerna": "^3.20.2",
     "release": "^6.1.0",
-    "typescript": "^3.7.5",
+    "typescript": "^3.8.1-rc",
     "yarn-deduplicate": "^1.1.1"
   },
   "husky": {
