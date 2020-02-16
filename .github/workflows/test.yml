@@ -1,0 +1,53 @@
+name: test
+
+on:
+  push:
+    # Definitely useful later
+    #branches:
+    #  - master
+    paths-ignore:
+      - "docs/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile --check-files
+          sh ./scripts/check-git-pristine-yarn-lock.sh
+
+      - name: Build monorepo packages
+        run: |
+          yarn build:packages
+
+      - name: Linting
+        run: |
+          yarn lint
+
+      - name: Typecheck
+        run: |
+          yarn typecheck
+
+      - name: Unit tests
+        run: |
+          yarn test:unit:coverage
+        env:
+          CI: true
+
+      - name: Send coverage to codecov
+        working-directory: .
+        run: |
+          npm install -g codecov
+          CODECOV_TOKEN=${{ secrets.CODECOV_TOKEN }} yarn coverage:publish
+
