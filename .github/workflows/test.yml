@@ -32,7 +32,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          yarn install --frozen-lockfile --check-files
+          yarn install --frozen-lockfile
 
       - name: Check yarn.lock
         run: sh ./scripts/check-git-pristine-yarn-lock.sh
