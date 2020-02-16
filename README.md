@@ -1,6 +1,6 @@
 # react desync
 
-![test](https://github.com/belgattitude/desync/workflows/test/badge.svg)
+![test](https://github.com/belgattitude/desync/workflows/release/badge.svg)
 [![codecov](https://codecov.io/gh/belgattitude/desync/branch/master/graph/badge.svg)](https://codecov.io/gh/belgattitude/desync)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
