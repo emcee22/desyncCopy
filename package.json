@@ -30,11 +30,11 @@
   },
   "devDependencies": {
     "husky": "^4.2.3",
-    "lint-staged": "^10.0.7",
+    "lint-staged": "^10.0.8",
     "lerna": "^3.20.2",
     "release": "^6.1.0",
-    "typescript": "^3.8.1-rc",
-    "yarn-deduplicate": "^1.1.1"
+    "typescript": "^3.8.3",
+    "yarn-deduplicate": "^2.0.0"
   },
   "husky": {
     "hooks": {
