@@ -9,6 +9,9 @@ coverage:
       usePromise:
         flags: usePromise
         target: 50%
+      result:
+        flags: result
+        target: 50%
 
 flags:
   useDeepCompareMemoize:
@@ -17,6 +20,9 @@ flags:
   usePromise:
     paths:
       - packages/use-promise
+  result:
+    paths:
+      - packages/result
 
 ignore:
   - "scripts/**/*"
