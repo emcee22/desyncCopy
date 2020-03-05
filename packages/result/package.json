@@ -1,7 +1,7 @@
 {
   "name": "@desync/result",
   "description": "Rust style result based on typescript discriminated union",
-  "version": "0.2.2-canary.3",
+  "version": "0.2.2-canary.4",
   "license": "MIT",
   "homepage": "https://github.com/belgattitude/desync",
   "repository": "belgattitude/desync",
@@ -46,7 +46,6 @@
       "prettier --write"
     ]
   },
-  "dependencies": {},
   "devDependencies": {
     "@testing-library/jest-dom": "^5.1.1",
     "@types/enzyme": "^3.10.5",
