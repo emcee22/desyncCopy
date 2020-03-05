@@ -9,6 +9,9 @@
     "version": {
       "exact": true
     },
+    "bootstrap": {
+      "npmClient": "yarn"
+    },
     "run": {
       "npmClient": "yarn"
     },
