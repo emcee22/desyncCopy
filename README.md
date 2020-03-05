@@ -5,7 +5,7 @@
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
-> Small utilities and hooks for dealing with data
+> Small utilities and hooks for dealing with data in a typescript world
 
 ## Projects
 
