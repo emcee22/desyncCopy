@@ -4,12 +4,12 @@
     "baseUrl": ".",
     "paths": {
       "@desync/use-deep-compare-memoize": ["./packages/use-deep-compare-memoize/src"],
-      "@desync/use-deep-compare-memoize/*": ["./packages/use-deep-compare-memoize/src/*"],
-      "@desync/use-promise": ["./packages/use-promise/src"]
+      "@desync/use-promise": ["./packages/use-promise/src"],
+      "@desync/result": ["./packages/result/src"],
+      "@desync/core": ["./packages/core/src"]
     }
   },
   "exclude": [
-    "node_modules",
-    "dist"
+    "**/dist/"
   ]
 }

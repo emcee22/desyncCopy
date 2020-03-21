@@ -25,7 +25,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development tsdx watch",
     "build": "cross-env NODE_ENV=production tsdx build --tsconfig tsconfig.build.json --format=cjs,esm,umd",
-    "clean": "rimraf --no-glob ./dist ./build",
+    "clean": "rimraf --no-glob ./dist ./build ./coverage",
     "test": "run-p test:*",
     "test:unit": "jest --config jest.config.js --color",
     "test:unit:coverage": "jest --config jest.config.js --color --coverage",
@@ -71,6 +71,7 @@
     "babel-plugin-import": "^1.13.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",

@@ -1,6 +1,6 @@
 {
-  "name": "@desync/use-promise",
-  "description": "Typescript friendlier hook to deal with async.",
+  "name": "@desync/core",
+  "description": "Deal with async.",
   "version": "0.3.1-canary.0",
   "license": "MIT",
   "homepage": "https://github.com/belgattitude/desync",
@@ -16,8 +16,8 @@
     "hooks"
   ],
   "main": "dist/index.js",
-  "umd:main": "dist/use-promise.umd.production.js",
-  "module": "dist/use-promise.esm.js",
+  "umd:main": "dist/core.umd.production.js",
+  "module": "dist/core.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
@@ -26,7 +26,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development tsdx watch",
     "build": "cross-env NODE_ENV=production tsdx build --tsconfig tsconfig.build.json --format=cjs,esm,umd",
-    "clean": "rimraf --no-glob ./dist ./build ./coverage",
+    "clean": "rimraf --no-glob ./dist ./build ./cross-env",
     "test": "run-p test:*",
     "test:unit": "jest --config jest.config.js --color",
     "test:unit:coverage": "jest --config jest.config.js --color --coverage",
@@ -51,11 +51,19 @@
     ]
   },
   "dependencies": {
-    "@desync/use-deep-compare-memoize": "0.3.1-canary.0"
+    "@desync/result": "0.3.1-canary.0",
+    "@desync/use-deep-compare-memoize": "0.3.1-canary.0",
+    "@desync/use-promise": "0.3.1-canary.0"
   },
   "peerDependencies": {
+    "@types/react": "^16.8.6",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.1.1",
