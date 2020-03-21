@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist"
+  },
+  "references": [
+    {
+      "path": "../use-deep-compare-memoize"
+    },
+    {
+      "path": "../use-promise"
+    },
+    {
+      "path": "../result"
+    }
+  ],
+  "exclude": ["node_modules", "dist"]
+}
