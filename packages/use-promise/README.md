@@ -7,3 +7,11 @@ React hook for promise consumption.
 ```
 $ yarn add @desync/use-promise
 ```
+
+Usage:
+
+```
+
+
+
+```

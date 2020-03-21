@@ -26,7 +26,9 @@
     "deduplicate": "yarn-deduplicate yarn.lock",
     "git-reset": "git reset --hard HEAD",
     "git-clean": "git clean -d -x -e node_modules -e packages -f",
-    "coverage:publish": "codecov && lerna run coverage:publish -- -f coverage/clover.xml"
+    "coverage:publish": "codecov && lerna run coverage:publish -- -f coverage/clover.xml",
+    "deps:check": "npx npm-check-updates && lerna exec -- yarn deps:check",
+    "deps:update": "npx npm-check-updates -u && lerna exec -- yarn deps:update"
   },
   "devDependencies": {
     "husky": "^4.2.3",
