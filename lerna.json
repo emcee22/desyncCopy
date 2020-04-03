@@ -4,14 +4,15 @@
   "command": {
     "bootstrap": {
       "npmClient": "yarn",
-      "ignore": "@sortlist/*-app"
+      "ignore": "@sl-apps/*-app"
     },
     "run": {
       "npmClient": "yarn"
     },
     "publish": {
       "npmClient": "npm",
-      "allowBranch": ["master",
+      "allowBranch": [
+        "master",
         "canary",
         "feature/check-publish-from-another-branch"],
       "registry": "https://npm.pkg.github.com"

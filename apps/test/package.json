@@ -61,7 +61,7 @@
     ]
   },
   "devDependencies": {
-    "@desync/core": "0.4.1"
+    "@desync/core": "0.4.6"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.1",
