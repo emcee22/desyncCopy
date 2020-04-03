@@ -1,29 +1,22 @@
 {
   "version": "independent",
-  "npmClient": "yarn",
-  "useWorkspaces": true,
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*", "apps/*"],
   "command": {
-    "version": {
-      "exact": true
-    },
     "bootstrap": {
-      "npmClient": "yarn"
+      "npmClient": "yarn",
+      "ignore": "@sortlist/*-app"
     },
     "run": {
       "npmClient": "yarn"
     },
     "publish": {
       "npmClient": "npm",
-      "access": "public",
-      "allowBranch": [
-        "master",
+      "allowBranch": ["master",
         "canary",
-        "feature/check-publish-from-another-branch"
-      ],
-      "registry": "https://registry.npmjs.org/"
+        "feature/check-publish-from-another-branch"],
+      "registry": "https://npm.pkg.github.com"
     }
-  }
+  },
+  "useWorkspaces": true,
+  "npmClient": "yarn"
 }
