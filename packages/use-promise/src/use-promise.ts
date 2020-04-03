@@ -33,6 +33,7 @@ export function usePromise<TResult, TVariables extends object>(
   const [data, setData] = useState<TResult | null>(options?.initialData ?? null);
   const [force, forceUpdate] = useReducer((x: number) => x + 1, 0);
 
+  // just a comment
   const mounted = useRef<boolean>(true);
 
   const memoizedParams = useDeepCompareMemoize(params);
