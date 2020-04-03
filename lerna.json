@@ -20,7 +20,8 @@
       "access": "public",
       "allowBranch": [
         "master",
-        "canary"
+        "canary",
+        "feature/check-publish-from-another-branch"
       ],
       "registry": "https://registry.npmjs.org/"
     }
